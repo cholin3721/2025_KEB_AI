@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 class LinearRegression:
     def __init__(self):
@@ -29,3 +30,24 @@ class LinearRegression:
         :return: predict value for input (2d array format)
         """
         return self.slope * np.array(X) + self.intercept
+
+class KNeighborsRegressor :
+    def __init__(self, n_neighbors = 5):
+        self.n_neighbors = n_neighbors
+        self.X = None
+        self.y = None
+
+    def fit(self, X, y):
+        self.X = X
+        self.y = y
+
+
+    def predict(self, num):
+        a = [(abs(num[0][0] - j[0]), i) for i, j in enumerate(self.X)]
+        sorted_neighbor = sorted(a, key=lambda x : x[0])[:self.n_neighbors]
+        total = 0
+        for _, i in sorted_neighbor :
+            total +=self.y[i]
+        return total / self.n_neighbors
+
+
