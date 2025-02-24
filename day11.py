@@ -50,9 +50,21 @@ print(a5, a5.ndim, a5.shape, a5.size)
 
 # np.array 는 한가지 타입으로 일괄적으로 변환해서 처리
 # numpy 는 c/c++ 로 만듬
-# n.dim은 배열의 차원 수를 나타내는 속성
+# n.ndim은 배열의 차원 수를 나타내는 속성
 # n.shape는 배열의 차원의 크기를 나타내는 튜플 형태의 속성을 말함
 # n.dtype 배열 요소들의 데이터 타입(일괄적으로 변환해서 처리)
 # n.strides 한마디로 배열 요소의 크기 (원소간의 간격, 열 간의 간격, 면 간의 간격)
 # float64 >> c++에서 double, go언어도 float64
 # n.size는 배열의 총 원소 개수를 반환하는 속성 요소 개수
+
+# numpy.linspace(start, stop, num=50, endpoint=True, dtype=None)
+# 지정한 범위에서 num 개의 등간격 숫자 배열을 생성
+# start: 시작 값
+# stop: 끝 값
+# num: 생성할 숫자 개수 (기본값: 50)
+# endpoint=True: stop 포함 여부 (False로 설정하면 stop 제외)
+
+# numpy.reshape(arr, newshape)
+# 배열의 형태(차원)를 변경
+# 기존 원소 개수(size)는 그대로 유지해야 함
+# newshape에 -1을 사용하면 자동 계산
