@@ -22,4 +22,6 @@ print()
 # df = pd.DataFrame(i.fit_transform(df))
 # print(df)
 
+# df = df.replace(np.nan, df.mean())
+# print(df)
 
